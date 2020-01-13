@@ -1,0 +1,18 @@
+.dep{
+  font-size: small;
+  font-family: cursive;
+  margin-left: 120px;
+}
+.usr{
+  font-size: small;
+  font-family: cursive;
+}
+.div{
+  border:none;
+  border-bottom: 3px solid rgb(133, 150, 127);
+}
+.textarea{
+  border:none;
+  border-bottom:rgb(127, 182, 127) 5px solid;
+  font-size: small;
+}

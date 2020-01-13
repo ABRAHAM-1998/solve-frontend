@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-5 col-sm-12 col-12 mt-3 shadow">
+
+      <h1 style="color: chocolate;" align="center">Login</h1>
+
+      <input type="username" [(ngModel)]="login_obj.username" class="form-control border-secondary 
+                 mt-5 textborder " placeholder="username">
+
+      <span style="color: rgba(8, 8, 8, 0.596); font-size: 12px;">Forget Email or Phone..?</span>
+
+      <span style="color: red;font-size: 12px;" id="dd"> </span>
+
+      <input type="password" [(ngModel)]="login_obj.password" class="form-control border-secondary mt-3  textborder"
+        placeholder="password">
+
+      <span style="color: rgba(10, 10, 10, 0.616);font-size: 12px;">Foget password..?</span>
+
+      <button type="submit" (click)="fn_login_email()"
+        class="col-md-12 form-control btn-secondary mt-3">login</button>
+
+      <p align='center' class='mt-3' style="color: rgb(2, 2, 2);">www.solvemycomplaint.com</p>
+    </div>
+    <div class="row col-lg-6 ml-3 mt-5">
+      <img src="assets/images/solve.jpeg">
+    </div>
+  </div>
+</div>

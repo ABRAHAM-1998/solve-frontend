@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-5 mt-2 shadow ">
+
+      <h1 style="color: chocolate; font-family: cursive;"  align="center">SIGN UP</h1>
+      <!-- <p class="small text-info mb-3" align="center" >solvemycomplaint.com</p> -->
+
+      <!-- ####################################### NAME ################# -->
+      <input (focus)="fn_input_touched()" (input)="fn_check_name()" [(ngModel)]="signUpObj.name" type="text"
+        placeholder="Name" id="iname" class="form-control  textborder">
+
+      <div class="alert alert-info small" *ngIf="username_exists">
+        Username already exists
+      </div>
+
+      <div *ngIf="signUpObj.name.length < 4 && inputTouched" class="alert alert-danger  "
+        style="font-size: 12px;text-align:center;">
+        name must be grater than 4!
+      </div>
+
+      <!-- ###########  Email ########### -->
+      <input [(ngModel)]="signUpObj.email" class="form-control mt-3  textborder" (input)="fn_check_mail()"
+        (focus)="fn_inputtouched3()" placeholder="Enter your Email"/>
+
+      <div *ngIf="inputTouched3 && signUpObj.email.length < 11" class="alert alert-danger small">
+        example@gmail.com
+      </div>
+
+      <div class="alert alert-info small" *ngIf="email_exists">
+        Email already taken!
+      </div>
+
+      <!-- ############################## MOBILE ################### -->
+      <input type="tel" (focus)="fn_inputtouched1()" [(ngModel)]="signUpObj.mobile"
+        class="form-control col-md-7 col-sm-7 col-7 mt-3  textborder" id="imob" placeholder="Mobile Number"/>
+
+      <div *ngIf="signUpObj.mobile.length != 10 && inputTouched1" class="alert alert-danger"
+        style="font-size: 12px;text-align:center;">
+        mobile number must be 10 digits!
+      </div>
+
+      <!-- ###################### PASSWORD ################## -->
+      <input type="password" (focus)="fn_inputtouched2()" [(ngModel)]="signUpObj.password"
+        class="form-control col-md-9 col-sm-9 col-9  mt-2 textborder" id="ipass" placeholder="password"/>
+
+
+      <input type="password" (focus)="fn_inputtouched2()" [(ngModel)]="signUpObj.passwordre"
+        class="form-control col-md-9 col-sm-9 col-9  mt-3 textborder" id="irepass"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters"
+        required placeholder="Re-enter password">
+
+      <div *ngIf="((signUpObj.password != signUpObj.passwordre) || ( signUpObj.password.length < 4 )) && inputTouched2"
+        class="alert alert-danger small" style="font-size: 12px;text-align:center;">
+        wrong password!
+      </div>
+
+      <input type="checkbox" />
+      <h6 style="font-size: small;">Show Password</h6>
+
+      <!-- ###############################dob##################################### -->
+      <span id="us" style="font-size: small;"> Date Of Bitrth
+        <input type="date" class="form-control col-lg-4 mt-2 shadow textborder bg-info text-white" [(ngModel)]="signUpObj.dob"/>
+      </span>
+
+
+      <!-- ################################## GENDER ################### -->
+      <input type="radio" class=" col-md-1 mt-3 col-sm-1 col-1" id="sxm" value="male" name="sex"
+        [(ngModel)]="signUpObj.gender">
+
+      <span class="col-md-2 col-sm-2 col-2 shadow">Male</span>
+
+      <span class="text-white ">OR</span>
+
+      <input type="radio" class=" col-md-2 col-sm-1 col-2" id="sxf" value="female" name="sex"
+        [(ngModel)]="signUpObj.gender"/>
+
+      <span class="col-md-2 col-sm-2 col-2 shadow">Female</span>
+      <!-- ***************************** button******************************* -->
+      <button [disabled]=" signUpObj.name.length < 4 || signUpObj.mobile.length != 10 || signUpObj.password !=  signUpObj.passwordre 
+        || username_exists || email_exists || !signUpObj.gender || !signUpObj.dob " class="col-md-10 ml-5 form-control btn-secondary shadow my-3"
+        (click)="fn_signup()">SIGNUP</button>
+
+      <div class="alert alert-danger" *ngIf="err_msg">
+        {{ err_msg }}
+      </div>
+    </div>
+    
+    <div class="row col-lg-5">
+      <img src="assets/images/solve.jpeg" class="ml-5 my-5 spin-big">
+  </div>
+  </div>
+</div>

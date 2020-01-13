@@ -1,0 +1,62 @@
+.div{
+    padding-top: 30px;
+    height: 90px;
+    font-family: cursive;
+    background-color:indigo;
+    color:white;
+}
+.dep{
+    font-size: small;
+    font-family: cursive;
+    margin-left: 120px;
+  }
+  .usr{
+    font-size: small;
+    font-family: cursive;
+  }
+  .div{
+    border:none;
+    border-bottom: 3px solid rgb(133, 150, 127);
+  }
+  .textarea{
+    border:none;
+    border-bottom:rgb(127, 182, 127) 5px solid;
+    font-size: small;
+  }
+  .pos{
+      top: 30px;
+      left: 190px;
+      position: absolute;
+      background-color:white;
+      position: fixed;
+      border-radius: 5px;
+      box-shadow: 10px 10px 30px 15px rgb(125, 129, 129); 
+      
+  }
+  .pos2{
+   top: 30px;
+    left: 190px;
+    position: absolute;
+    background-color:white;
+    position: fixed;
+    border-radius: 5px;
+    box-shadow: 10px 10px 30px 5px;  
+    
+}
+.bgc{
+  background-color: rgb(173, 164, 164);
+}
+.txt{
+  font-family: cursive;
+  color:white;
+  
+}
+.posed{
+  top: 30px;
+  left: 190px;
+  position: absolute;
+  background-color:white;
+  position: fixed;
+  border-radius: 5px;
+  box-shadow: 10px 10px 30px 5px;
+}

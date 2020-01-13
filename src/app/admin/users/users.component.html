@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-lg-12 cl-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <!-- __________________________________________navbar_________________________________________________________________ -->
+        <div class="container-fluid ">
+          <nav class="navbar navbar-expand-lg">
+            <input class="form-control mr-sm-2 border-secondary shadow col-lg-5" type="search" placeholder="Search"
+              aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0 shadow" type="submit"><b>Search</b></button>
+          </nav>
+        </div>
+        <!-- ______________________________________________________________________________________________________________________ -->
+       <div style="overflow-y: scroll; height: 380px;">
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item  btn-outline-light shadow mb-1 pb-2" *ngFor="let user of users; let i=index">
+            <span class="namesp"> {{ user.username }} </span>
+            <div class="float-right">
+              <label class="switch">
+                <input (change)="fn_activeFlag(user.id, user.active_flag, i)" type="checkbox"
+                  [checked]="user.active_flag">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <span class="float-right mr-5">
+              <button (click)="open_chat_comp()" class="text-warning form-control alert-warning alert-sm mr-5 align-middle">
+                Messages<fa name="envelope fa-lg" class="pl-3"></fa>
+              </button>
+            </span>
+
+            <span class="mr-5 float-right">
+              <button (click)="fn_open_usercomp()" class="text-primaty form-control  alert-sm mr-5 align-middle">
+                Complaints<fa name="align-justify fa-lg" class="pl-3"></fa>
+              </button>
+            </span>
+
+            <span class="mr-5 float-right">
+              <button (click)="fn_viewprofile(user.id)" class="text-primaty form-control alert-secondary alert-sm mr-5 align-middle">
+                View profile<fa name="eye fa-lg" class="pl-3"></fa>
+              </button>
+            </span>
+
+          </li>
+
+        </ul>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>

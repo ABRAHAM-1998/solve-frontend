@@ -1,0 +1,9 @@
+.textborder{
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: small;   
+}
+.spin-big {
+    height: 370px;
+    width: 450px;
+  }

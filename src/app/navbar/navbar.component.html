@@ -1,0 +1,32 @@
+<div>
+
+  <div class="container-fluid shadow">
+    <div class="row p-3">
+
+      <div class="col-lg-4 " style="font-size:26px;">
+        <b class="ml-3" style="color:rgb(255, 145, 0);">SOLVE</b>
+        <b style="color: blue;">My</b>
+        <b style="color: orangered;">Complaint</b>
+      </div>
+
+
+      <div class="col-lg-2 col-sm-3 col-4" *ngIf="!ServUser.serv_check_userid()">
+        <a routerLink="/home/signup">
+          <button class="btn btn-outline-secondary col-lg-10 shadow">SignUp</button>
+        </a>
+      </div>
+
+      <div class="col-lg-2 col-sm-3 col-4" *ngIf="!ServUser.serv_check_userid()">
+        <a routerLink="/home/login">
+          <button class="btn btn-outline-success shadow col-lg-10">Login</button>
+        </a>
+      </div>
+      <div>
+        <button class="col-lg-12 form-control btn-danger  float-right"> logout</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

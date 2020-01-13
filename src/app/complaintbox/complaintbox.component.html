@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="container-fluid col-lg-8 col-sm-12 col-md-12 col-12">
+      <div class="mt-3 ">
+        <h4 class="  colo" align="center">REGISTER -COMPLAINT</h4>
+        <textarea [(ngModel)]="comp_obj.complaint" name="text-box" class="form-control" cols="30" rows="10"
+          style="max-height: 700px;height: 350px;">
+
+                  </textarea>
+
+        <div class="row">
+          <p class=" col-lg-11 col-md-11 col-sm-11 mx-3 alert-secondary  small">select pettition priority <fa
+              name="arrow-down fa-lg">
+            </fa>
+          </p>
+          <span *ngFor="let prio of priorites" [ngClass]="prio.display_style" class="btn-sm form-control col-lg-3 col-4 col-md-2 col-sm-2 ml-3 shadow">
+            <input type="radio" [(ngModel)]="comp_obj.priority" name="priority" [value]="prio.id"> {{ prio.priority_name }} <fa
+              name="exclamation-circle fa-lg"></fa></span>
+<!-- 
+          <span class="alert-warning btn-sm form-control col-lg-2 col-md-2 col-sm-2 col-4 ml-3 shadow">
+            <input type="radio" [(ngModel)]="comp_obj.priority" name="priority" value="high">High<fa
+              name="exclamation-circle fa-lg"></fa></span>
+
+          <span class="alert-info btn-sm form-control col-lg-3 col-md-2 col-sm-2  col-4 ml-3 shadow">
+            <input type="radio" [(ngModel)]="comp_obj.priority" name="priority" value="medium">Medium<fa
+              name="exclamation-circle fa-sm"></fa></span>
+
+          <span class="alert-success btn-sm form-control col-lg-2 col-md-2 col-sm-2 ml-3 col-4 shadow">
+            <input type="radio" [(ngModel)]="comp_obj.priority" name="priority" value="low">Low<fa
+              name="exclamation-circle fa-lg"></fa></span> -->
+        </div>
+
+        <div class="row mt-4 col-lg-12" align="center">
+          <label for="" class="form-control col-lg-6 alert-success btn-sm shadow">
+            <input type="file" (change)="onFileInput($event);">
+            <!-- <fa name="paperclip fa-lg"></fa> -->
+          </label>
+          <button class="btn-outline-danger form-control col-lg-4  ml-5 mt-3 mb-2" (click)="fn_reg_comp()"> register
+            <fa name="edit fa-lg">
+            </fa>
+          </button>
+          <div class="col-lg-3"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row col-lg-4">
+      <div class="card-body shadow">
+        <div class="card col-lg-12">
+          <div *ngFor="let img of imagePreviewArray; let i=index">
+            <button class="btn-sm alert-danger" (click)="fn_remove_img(i);">delete <fa name="trash fa-lg"></fa></button>
+            <img class="card-img-top" [src]="img" alt="no images!!" style="width:100%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

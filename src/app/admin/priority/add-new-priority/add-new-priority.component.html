@@ -1,0 +1,62 @@
+<div class="container p-3">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h5>
+        Add new priority
+      </h5>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-lg-12">
+      <input placeholder="Enter your priority name" [(ngModel)]="priority_obj.name" type="text" class="form-control">
+    </div>
+  </div>
+ 
+  <div class="row mt-1">
+    <div class="col-lg-1">
+      <input type="radio" [(ngModel)]="priority_obj.displayStyle" name="displayStyle" class="mt-2"
+        value="alert alert-success">
+    </div>
+    <div class="col-lg-11">
+      <div class="alert alert-success"> {{ priority_obj.name }} </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-lg-1">
+      <input type="radio" [(ngModel)]="priority_obj.displayStyle" name="displayStyle" class="mt-2" value="alert alert-info">
+    </div>
+    <div class="col-lg-11">
+      <div class="alert alert-info"> {{ priority_obj.name }} </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-lg-1">
+      <input type="radio" [(ngModel)]="priority_obj.displayStyle" name="displayStyle" class="mt-2"
+        value="alert alert-warning">
+    </div>
+    <div class="col-lg-11">
+      <div class="alert alert-warning"> {{ priority_obj.name }} </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-lg-1">
+      <input type="radio" [(ngModel)]="priority_obj.displayStyle" name="displayStyle" class="mt-2" value="alert alert-danger">
+    </div>
+    <div class="col-lg-11">
+      <div class="alert alert-danger"> {{ priority_obj.name }} </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-lg-12">
+      <button (click)="fn_save_priority()" class="btn btn-success">Save</button>
+      <button (click)="activeModel.dismiss();" class="btn btn-light ml-1">Cancel</button>
+    </div>
+  </div>
+
+</div>
